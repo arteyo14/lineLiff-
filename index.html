@@ -60,7 +60,7 @@
         document.getElementById("language").append(liff.getLanguage());
         document.getElementById("version").append(liff.getVersion());
         document.getElementById("accessToken").append(liff.getAccessToken());
-        console.log(liff);
+        console.log(liff.getAccessToken());
         document.getElementById("isInClient").append(liff.isInClient()); //เป็นตัวบอกว่า เปิดใน APP หรือ browser
         if (liff.isInClient()) {
           document.getElementById("btnLogOut").style.display = "none";
