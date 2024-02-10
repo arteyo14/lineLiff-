@@ -47,6 +47,15 @@
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
+      async function shareMsg() {
+        await liff.shareTargetPicker([
+          {
+            type: "text",
+            text: "this message was sent by ShareTargetPicker",
+          },
+        ]);
+      }
+
       function logOut() {
         liff.logOut();
         window.location.reload();
