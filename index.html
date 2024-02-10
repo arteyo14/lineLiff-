@@ -55,6 +55,14 @@
 
       async function scanCode() {}
 
+      async function getContext() {
+        document.getElementById("type").append(liff.getContext().type); //get chat type as group, one on one or room
+        document.getElementById("viewType").append(liff.getContext().viewType); //get size viewType full tall compact
+        document.getElementById("utouId").append(liff.getContext().utouId); //get id from chat as type one on one
+        document.getElementById("roomId").append(liff.getContext().roomId); //get room chat id
+        document.getElementById("groupId").append(liff.getContext().groupId); //get room chat id
+      }
+
       async function getUserProfile() {
         const profile = await liff.getProfile();
         document.getElementById("pictureUrl").src = profile.pictureUrl;
@@ -90,6 +98,7 @@
         await liff.init({ liffId: "2003132482-OMw43znD" });
         getEnvironment();
         getUserProfile();
+        getContext();
       }
       main();
     </script>
