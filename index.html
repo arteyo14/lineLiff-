@@ -55,6 +55,14 @@
 
       async function scanCode() {}
 
+      async function getUserProfile() {
+        const profile = await liff.getProfile();
+        document.getElementById("pictureUrl").src = profile.pictureUrl;
+        document.getElementById("userId").append(profile.userId);
+        document.getElementById("statusMessage").append(profile.statusMessage);
+        document.getElementById("displayName").append(profile.displayName);
+      }
+
       async function getEnvironment() {
         document.getElementById("os").append(liff.getOS());
         document.getElementById("language").append(liff.getLanguage());
@@ -70,6 +78,7 @@
           document.getElementById("btnClose").style.display = "none";
         }
       }
+
       function signOut() {}
 
       function closed() {}
@@ -77,6 +86,7 @@
       async function main() {
         await liff.init({ liffId: "2003132482-OMw43znD" });
         getEnvironment();
+        getUserProfile();
       }
       main();
     </script>
