@@ -49,7 +49,19 @@
     <script>
       async function runApp() {}
 
-      async function sendMsg() {}
+      async function sendMsg() {
+        if (liff.getContext().type) {
+          // avoid chat type is null
+          await liff.sendMessages([
+            {
+              type: "sticker",
+              stickerId: 1,
+              packageId: 1,
+            },
+          ]);
+          alert("Message sent");
+        }
+      }
 
       function openWindow() {}
 
