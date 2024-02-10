@@ -82,7 +82,10 @@
         });
       } //
 
-      async function scanCode() {}
+      async function scanCode() {
+        const result = await liff.scanCode();
+        document.getElementById("scanCode").append(result.value);
+      }
 
       async function getContext() {
         document.getElementById("type").append(liff.getContext().type); //get chat type as group, one on one or room
