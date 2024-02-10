@@ -47,6 +47,11 @@
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
+      function createUniversalLink() {
+        const link1 = liff.permanentLink.createUrl();
+        document.getElementById("universalLink1").append(link1);
+      }
+
       async function shareMsg() {
         await liff.shareTargetPicker([
           {
@@ -149,11 +154,14 @@
           getUserProfile();
           getContext();
           getFriendship();
+          createUniversalLink();
         } else {
           liff.login(); //กรณี User ไม่ได้ logic ให้เข้าหน้า login ก่อน
         }
       }
       main();
+
+      //universal link https://liff.line.me/LIFF-ID เข้าแล้วระบบจะตัดสินใจเองว่าจะเข้าผ่านไลน์หรือ browser
     </script>
   </body>
 </html>
