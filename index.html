@@ -74,7 +74,13 @@
         }
       }
 
-      function openWindow() {}
+      function openWindow() {
+        //เพื่อเว็บผ่าน external browser
+        liff.openWindow({
+          url: "https://line.me",
+          external: true,
+        });
+      } //
 
       async function scanCode() {}
 
