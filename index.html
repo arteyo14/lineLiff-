@@ -84,7 +84,7 @@
 
       async function scanCode() {
         const result = await liff.scanCode();
-        document.getElementById("scanCode").append(result.value);
+        document.getElementById("scanCode").append(result.value); //get ค่าที่ได้จาก qrcode
       }
 
       async function getContext() {
