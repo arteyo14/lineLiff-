@@ -49,6 +49,17 @@
     <script>
       async function runApp() {}
 
+      async function getFriendship() {
+        // เอาไว้เล่นกับการ add bot ว่า User มีการเพิ่ม bot ตัวนี้เป็นเพื่อนหรือยัง
+        const friend = await liff.getFriendship();
+        document.getElementById("friendship").append(freind.friendFlag);
+        if (!friend.friendFlag) {
+          if (confirm("คุณยังไม่ได้เพิ่ม Bot เป็นเพื่อน จะเพิ่มเลยไหม ?")) {
+            window.location = "URL line bot";
+          }
+        }
+      }
+
       async function sendMsg() {
         if (liff.getContext().type) {
           // avoid chat type is null
@@ -58,7 +69,7 @@
               stickerId: 1,
               packageId: 1,
             },
-          ]);
+          ]); // add bubble ไม่เกิน 5 bubble
           alert("Message sent");
         }
       }
@@ -111,6 +122,7 @@
         getEnvironment();
         getUserProfile();
         getContext();
+        getFriendship();
       }
       main();
     </script>
